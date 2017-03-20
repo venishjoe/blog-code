@@ -1,0 +1,143 @@
+Compiled from "StringConcatPerformance.java"
+public class StringConcatPerformance extends java.lang.Object {
+public StringConcatPerformance();
+  Code:
+   0:	aload_0
+   1:	invokespecial	#1; //Method java/lang/Object."<init>":()V
+   4:	return
+
+public static void main(java.lang.String[]) throws java.lang.Exception;
+  Code:
+   0:	ldc	#2; //String 
+   2:	astore_1
+   3:	ldc	#2; //String 
+   5:	astore_2
+   6:	aconst_null
+   7:	astore_3
+   8:	aconst_null
+   9:	astore	4
+   11:	iconst_0
+   12:	istore	5
+   14:	iload	5
+   16:	bipush	20
+   18:	if_icmpgt	83
+   21:	new	#3; //class org/perf4j/LoggingStopWatch
+   24:	dup
+   25:	ldc	#4; //String StringAddConcat
+   27:	invokespecial	#5; //Method org/perf4j/LoggingStopWatch."<init>":(Ljava/lang/String;)V
+   30:	astore	6
+   32:	ldc	#2; //String 
+   34:	astore_1
+   35:	iconst_0
+   36:	istore	7
+   38:	iload	7
+   40:	ldc	#6; //int 50000
+   42:	if_icmpgt	71
+   45:	new	#7; //class java/lang/StringBuilder
+   48:	dup
+   49:	invokespecial	#8; //Method java/lang/StringBuilder."<init>":()V
+   52:	aload_1
+   53:	invokevirtual	#9; //Method java/lang/StringBuilder.append:(Ljava/lang/String;)Ljava/lang/StringBuilder;
+   56:	ldc	#10; //String *
+   58:	invokevirtual	#9; //Method java/lang/StringBuilder.append:(Ljava/lang/String;)Ljava/lang/StringBuilder;
+   61:	invokevirtual	#11; //Method java/lang/StringBuilder.toString:()Ljava/lang/String;
+   64:	astore_1
+   65:	iinc	7, 1
+   68:	goto	38
+   71:	aload	6
+   73:	invokevirtual	#12; //Method org/perf4j/StopWatch.stop:()Ljava/lang/String;
+   76:	pop
+   77:	iinc	5, 1
+   80:	goto	14
+   83:	iconst_0
+   84:	istore	5
+   86:	iload	5
+   88:	bipush	20
+   90:	if_icmpgt	142
+   93:	new	#3; //class org/perf4j/LoggingStopWatch
+   96:	dup
+   97:	ldc	#13; //String StringConcat
+   99:	invokespecial	#5; //Method org/perf4j/LoggingStopWatch."<init>":(Ljava/lang/String;)V
+   102:	astore	6
+   104:	ldc	#2; //String 
+   106:	astore_2
+   107:	iconst_0
+   108:	istore	7
+   110:	iload	7
+   112:	ldc	#6; //int 50000
+   114:	if_icmpgt	130
+   117:	aload_2
+   118:	ldc	#10; //String *
+   120:	invokevirtual	#14; //Method java/lang/String.concat:(Ljava/lang/String;)Ljava/lang/String;
+   123:	astore_2
+   124:	iinc	7, 1
+   127:	goto	110
+   130:	aload	6
+   132:	invokevirtual	#12; //Method org/perf4j/StopWatch.stop:()Ljava/lang/String;
+   135:	pop
+   136:	iinc	5, 1
+   139:	goto	86
+   142:	iconst_0
+   143:	istore	5
+   145:	iload	5
+   147:	bipush	20
+   149:	if_icmpgt	206
+   152:	new	#3; //class org/perf4j/LoggingStopWatch
+   155:	dup
+   156:	ldc	#15; //String StringBufferConcat
+   158:	invokespecial	#5; //Method org/perf4j/LoggingStopWatch."<init>":(Ljava/lang/String;)V
+   161:	astore	6
+   163:	new	#16; //class java/lang/StringBuffer
+   166:	dup
+   167:	invokespecial	#17; //Method java/lang/StringBuffer."<init>":()V
+   170:	astore_3
+   171:	iconst_0
+   172:	istore	7
+   174:	iload	7
+   176:	ldc	#6; //int 50000
+   178:	if_icmpgt	194
+   181:	aload_3
+   182:	ldc	#10; //String *
+   184:	invokevirtual	#18; //Method java/lang/StringBuffer.append:(Ljava/lang/String;)Ljava/lang/StringBuffer;
+   187:	pop
+   188:	iinc	7, 1
+   191:	goto	174
+   194:	aload	6
+   196:	invokevirtual	#12; //Method org/perf4j/StopWatch.stop:()Ljava/lang/String;
+   199:	pop
+   200:	iinc	5, 1
+   203:	goto	145
+   206:	iconst_0
+   207:	istore	5
+   209:	iload	5
+   211:	bipush	20
+   213:	if_icmpgt	272
+   216:	new	#3; //class org/perf4j/LoggingStopWatch
+   219:	dup
+   220:	ldc	#19; //String StringBuilderConcat
+   222:	invokespecial	#5; //Method org/perf4j/LoggingStopWatch."<init>":(Ljava/lang/String;)V
+   225:	astore	6
+   227:	new	#7; //class java/lang/StringBuilder
+   230:	dup
+   231:	invokespecial	#8; //Method java/lang/StringBuilder."<init>":()V
+   234:	astore	4
+   236:	iconst_0
+   237:	istore	7
+   239:	iload	7
+   241:	ldc	#6; //int 50000
+   243:	if_icmpgt	260
+   246:	aload	4
+   248:	ldc	#10; //String *
+   250:	invokevirtual	#9; //Method java/lang/StringBuilder.append:(Ljava/lang/String;)Ljava/lang/StringBuilder;
+   253:	pop
+   254:	iinc	7, 1
+   257:	goto	239
+   260:	aload	6
+   262:	invokevirtual	#12; //Method org/perf4j/StopWatch.stop:()Ljava/lang/String;
+   265:	pop
+   266:	iinc	5, 1
+   269:	goto	209
+   272:	return
+
+}
+
