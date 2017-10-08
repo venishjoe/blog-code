@@ -1,5 +1,5 @@
 # IntelliJ Files
-Coeus.iml
+*.iml
 .idea
 
 # Output & Data Directory
